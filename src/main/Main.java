@@ -24,22 +24,51 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int numberOfDice;
         int total = 0;
         
+        System.out.println("----- DICE ROLLER GAME -----");
+        
+        System.out.print("Enter name of player 1: ");
+        String player1Name = scanner.nextLine();
+
+        System.out.print("Enter name of player 2: ");
+        String player2Name = scanner.nextLine();
+        
+        Player player1 = new Player(player1Name);
+        Player player2 = new Player(player2Name);
+        
+        System.out.println("--- Turn: ["+ player1.getName() + "] ---");
         System.out.print("Enter the number of dice to roll: ");
         numberOfDice = scanner.nextInt();
         
         if (numberOfDice > 0) {
-            System.out.println("\nRolling the dice...\n");
+            System.out.println("\nRolling the dice for "+ player1.getName() +"...\n");
             for (int i = 0; i < numberOfDice; i++) {
                 int roll = animateRoll(random);
-                System.out.println("You rolled: [" + roll + "]");
-                total += roll;
+                System.out.println(player1.getName() +" rolled: [" + roll + "]");
+                player1.addToScore(roll);
             }
-            System.out.println("\nTotal: " + total);
+            System.out.println("\nTotal score for " + player1.getName() + ": " + player1.getScore());
+        } else {
+            System.out.println("Please enter a number of dice greater than 0 (zero).");
+        }
+        
+        System.out.println("--- Turn: ["+ player2.getName() + "] ---");
+        System.out.print("Enter the number of dice to roll: ");
+        numberOfDice = scanner.nextInt();
+        
+        if (numberOfDice > 0) {
+            System.out.println("\nRolling the dice for "+ player2.getName() +"...\n");
+            for (int i = 0; i < numberOfDice; i++) {
+                int roll = animateRoll(random);
+                System.out.println(player2.getName() +" rolled: [" + roll + "]");
+                player2.addToScore(roll);
+            }
+            System.out.println("\nTotal score for " + player2.getName() + ": " + player2.getScore());
         } else {
             System.out.println("Please enter a number of dice greater than 0 (zero).");
         }
