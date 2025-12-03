@@ -1,23 +1,26 @@
 # 🎲 Dice Roll Game - Java Console Application
 
-A simple and fun **Dice Roll Game built in Java**, where the player
-chooses how many dice to roll and the program simulates each roll using
-random values. The game displays each die using **ASCII art** and
-calculates the total score automatically.
+A dynamic and interactive **Dice Roll Game built in Java** featuring
+animated dice, two-player multiplayer mode, and a final winner
+determination system. Players take turns rolling animated dice and their
+total scores are compared at the end of the match.
 
-This project was created as a learning exercise to practice **core Java
-programming concepts**.
+This project started as a single-player game and was later expanded into
+a **multiplayer console game with real-time animation** using ANSI
+escape codes.
 
 ------------------------------------------------------------------------
 
 ## 🚀 Features
 
--   Roll one or multiple dice
--   Random dice value generation (1--6)
--   ASCII-art dice visualization
--   Automatic total score calculation
--   Input validation for number of dice
--   Clean and modern Java syntax (text blocks, switch expressions)
+-   🎲 Animated dice roll using real-time terminal rendering
+-   👥 Two-player multiplayer mode
+-   🔁 Player turns with independent score tracking
+-   📊 Final score summary
+-   🏆 Automatic winner detection or tie result
+-   ⏱️ Smooth animation timing with `Thread.sleep`
+-   ✅ Input validation for number of dice
+-   💡 Clean and modern Java syntax (text blocks, switch expressions)
 
 ------------------------------------------------------------------------
 
@@ -25,13 +28,14 @@ programming concepts**.
 
 This project reinforces the following Java fundamentals:
 
--   Variables and data types
--   Loops (`for`)
--   Conditional logic (`if`, `switch`)
--   Methods and modular design
+-   Object-Oriented Programming (OOP)
+-   Encapsulation using custom `Player` class
+-   Loops and conditional logic
 -   Random number generation (`Random`)
--   User input (`Scanner`)
--   Text blocks (`"""`) for clean multi-line output
+-   User input handling (`Scanner`)
+-   Text blocks for ASCII art
+-   Exception handling
+-   ANSI escape codes for terminal control
 
 ------------------------------------------------------------------------
 
@@ -40,55 +44,79 @@ This project reinforces the following Java fundamentals:
 ### 1. Clone the repository
 
 ``` bash
-git clone https://github.com/your-username/dice-roll-game-java.git
+git clone https://github.com/matiscalella/java-roll-dice-game.git
 ```
 
 ### 2. Compile the program
 
 ``` bash
-javac Main.java
+javac main/Main.java
 ```
 
 ### 3. Run the game
 
 ``` bash
-java Main
+java main.Main
 ```
+
+> ⚠️ For best animation results, run the game using **Git Bash**,
+> **Windows Terminal**, or any real terminal. Some IDE output consoles
+> do not fully support ANSI animations.
 
 ------------------------------------------------------------------------
 
 ## 🎮 Example Gameplay
 
 ``` text
-Enter the number of dice to roll: 2
+----- DICE ROLLER GAME -----
+Enter name of player 1: Matias
+Enter name of player 2: Juan
 
-Rolling the dice...
+--- Turn: [Matias] ---
+Enter the number of dice to roll: 3
 
--------
-| o o |
-|  o  |
-| o o |
--------
-You rolled: [5]
+Rolling the dice for Matias...
 
--------
-|     |
-|  o  |
-|     |
--------
-You rolled: [1]
+🎲 (animated roll effect)
 
-Total: 6
+Matias rolled: [5]
+Matias rolled: [2]
+Matias rolled: [6]
+
+Total score for Matias: 13
+
+--- Turn: [Juan] ---
+Enter the number of dice to roll: 3
+
+Rolling the dice for Juan...
+
+Juan rolled: [4]
+Juan rolled: [1]
+Juan rolled: [3]
+
+Total score for Juan: 8
+
+--- END OF TURNS ---
+FINAL SCORES:
+Matias: [13]
+Juan: [8]
+
+🏆 Winner: Matias
 ```
 
 ------------------------------------------------------------------------
 
 ## 📌 Project Structure
 
-    📦 project-root
-     └── src
-         └── main
-             └── Main.java
+    📦 java-roll-dice-game
+     ├── src/
+     │   └── main/
+     │       ├── Main.java
+     │       ├── Player.java
+     │       ├── Dice.java
+     │       └── Game.java
+     ├── README.md
+     └── .gitignore
 
 ------------------------------------------------------------------------
 
@@ -97,23 +125,24 @@ Total: 6
 -   Java 17+
 -   Console-based interface
 -   ASCII graphics
+-   ANSI terminal rendering
 
 ------------------------------------------------------------------------
 
 ## 📈 Future Improvements (Planned)
 
--   🎮 Multiplayer mode
+-   🔄 Multiple rounds (best of 3, best of 5)
+-   🧱 Full game architecture using `Game` and `Dice` classes
 -   🖥️ Graphical User Interface (GUI)
--   🎲 Dice roll animation
--   📊 Roll history and statistics
--   🎯 Scoring rules and game modes
+-   🎲 Parallel dice animations
+-   📊 Match history and statistics
 
 ------------------------------------------------------------------------
 
 ## 👨‍💻 Author
 
 Developed by **Matias Scalella**\
-As part of personal practice and portfolio development in Java.
+As part of personal practice and Java portfolio development.
 
 ------------------------------------------------------------------------
 

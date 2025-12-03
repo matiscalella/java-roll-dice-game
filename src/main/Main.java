@@ -72,7 +72,23 @@ public class Main {
         } else {
             System.out.println("Please enter a number of dice greater than 0 (zero).");
         }
-  
+        
+        System.out.println("\n--- END OF TURNS ---");
+        System.out.println("FINAL SCORES: ");
+        System.out.println(player1.getName() + ": [" + player1.getScore() + "]");
+        System.out.println(player2.getName() + ": [" + player2.getScore() + "]");
+        if (player1.getScore() > player2.getScore()) {
+            System.out.println("\n🏆 Winner: " + player1.getName());
+        } 
+        else if (player2.getScore() > player1.getScore()) {
+            System.out.println("\n🏆 Winner: " + player2.getName());
+        } 
+        else {
+            System.out.println("It's a tie!");
+        }
+        
+        
+        
         
         scanner.close();
     }
