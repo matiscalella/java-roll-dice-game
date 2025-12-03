@@ -35,8 +35,7 @@ public class Main {
         if (numberOfDice > 0) {
             System.out.println("\nRolling the dice...\n");
             for (int i = 0; i < numberOfDice; i++) {
-                int roll = random.nextInt(1, 7);
-                printDie(roll);
+                int roll = animateRoll(random);
                 System.out.println("You rolled: [" + roll + "]");
                 total += roll;
             }
@@ -115,6 +114,35 @@ public class Main {
             case 6 -> System.out.print(dice6);
             default -> System.out.println("Invalid roll.");
         }
+    }
+    /**
+     * Simulates a dice roll animation by printing several intermediate
+     * random dice faces before returning the final rolled value.
+     *
+     * @param random the Random instance used to generate values
+     * @return the final rolled value (1 to 6)
+     */
+    static int animateRoll(Random random) {
+        int animationLength = 5;
+        int lastRoll = 0;
+        for (int i = 0; i < 5; i++) {
+            if (i == animationLength - 1) {
+                lastRoll = random.nextInt(1, 7);
+                printDie(lastRoll);
+                break;
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                lastRoll = random.nextInt(1, 7);
+                printDie(lastRoll);
+                try {
+                    Thread.sleep(180);
+                } catch (InterruptedException e) {
+                    System.out.println("Error");
+                }
+            }
+        }
+        return lastRoll;
     }
     
 }
