@@ -23,7 +23,7 @@ public class Game {
     private int numberOfDice;
 
     /**
-    * Creates a new {@code Game} instance with two players, a dice
+    * Creates a new {@code Game} instance with two players, a die
     * and a fixed number of dice rolls per player.
     *
     * @param player1      the first player participating in the game
@@ -36,6 +36,9 @@ public class Game {
     public Game(Player player1, Player player2, Dice dice, int numberOfDice) {
         if (numberOfDice <= 0) {
             throw new IllegalArgumentException("Number of dice must be greater than zero.");
+        }
+        if (player1 == null || player2 == null || dice == null) {
+            throw new IllegalArgumentException("Players and dice must not be null.");
         }
         this.player1 = player1;
         this.player2 = player2;
@@ -54,7 +57,7 @@ public class Game {
         playTurn(player1);
         playTurn(player2);
         System.out.println("\n----- END OF TURNS -----");
-        System.out.println("^^^ FINAL SCORES ^^^");
+        System.out.println("--- FINAL SCORES ---");
         System.out.println(player1.getName() + ": [" + player1.getScore() + "]");
         System.out.println(player2.getName() + ": [" + player2.getScore() + "]");
         if (player1.getScore() > player2.getScore()) {
