@@ -61,10 +61,10 @@ public class Game {
         System.out.println(player1.getName() + ": [" + player1.getScore() + "]");
         System.out.println(player2.getName() + ": [" + player2.getScore() + "]");
         if (player1.getScore() > player2.getScore()) {
-            System.out.println("\n🏆 Winner: " + player1.getName());
+            System.out.println("\nWinner: " + player1.getName());
         } 
         else if (player2.getScore() > player1.getScore()) {
-            System.out.println("\n🏆 Winner: " + player2.getName());
+            System.out.println("\nWinner: " + player2.getName());
         } 
         else {
             System.out.println("\nIt's a tie!");
