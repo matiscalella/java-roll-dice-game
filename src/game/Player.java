@@ -1,5 +1,5 @@
 
-package main;
+package game;
 
 /**
  * Represents a player in the dice game.
@@ -17,6 +17,9 @@ public class Player {
      * @param name the name of the player
      */
     public Player(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Player name cannot be empty.");
+        }
         this.name = name;
         this.score = 0;
     }
@@ -40,10 +43,10 @@ public class Player {
     }
     
     /**
-     * Adds the specified number of points to the player's score.
-     *
-     * @param points the number of points to add
-     */
+    * Adds the specified number of points to the player's total score.
+    *
+    * @param points the number of points obtained in a dice roll
+    */
     public void addToScore(int points) {
         this.score += points;
     }

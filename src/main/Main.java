@@ -1,41 +1,39 @@
 package main;
 
-import java.util.Scanner;
-
+import javax.swing.SwingUtilities;
+import ui.MainWindow;
 
 /**
- * Main class for the Dice Roll Game.
+ * Application entry point for the Dice Roller Game (GUI version).
  * <p>
- * This console-based application initializes the players, gathers user input,
- * and starts the game session.
+ * This class is responsible only for launching the graphical user interface.
+ * It does not contain any game logic. All gameplay behavior is handled by
+ * {@link MainWindow}, {@link Game}, {@link Dice}, and {@link Player}.
  * </p>
+ *
+ * <p>
+ * The GUI is started using {@link javax.swing.SwingUtilities#invokeLater(Runnable)}
+ * to ensure that all Swing components are created and managed on the Event
+ * Dispatch Thread (EDT), as required by Swing best practices.
+ * </p>
+ *
+ * <p>
+ * Responsibilities of this class:
+ * </p>
+ * <ul>
+ *   <li>Initialize the application.</li>
+ *   <li>Launch the main graphical window.</li>
+ * </ul>
  *
  * @author Matias
  */
 public class Main {
+
     public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner(System.in);
-        Dice dice = new Dice();
-        int numberOfDice;
-        
-        System.out.println("----- DICE ROLLER GAME -----");
-        
-        System.out.print("Enter name of player 1: ");
-        String player1Name = scanner.nextLine();
 
-        System.out.print("Enter name of player 2: ");
-        String player2Name = scanner.nextLine();
-        
-        Player player1 = new Player(player1Name);
-        Player player2 = new Player(player2Name);
-        System.out.print("Enter the number of dice to roll: ");
-        numberOfDice = scanner.nextInt();
-
-        Game game = new Game(player1, player2, dice, numberOfDice);
-        game.play();
-
-        scanner.close();
+        SwingUtilities.invokeLater(() -> {
+            MainWindow window = new MainWindow();
+            window.setVisible(true);
+        });
     }
-    
 }
