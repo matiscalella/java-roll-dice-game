@@ -107,18 +107,18 @@ The `Dice` class:
 ## 📦 Project Structure
 
 DiceRoller/
-├ src/
-│ ├ game/
-│ │ ├ Dice.java
-│ │ ├ Game.java
-│ │ └ Player.java
-│ └ ui/
-│ └ MainWindow.java
-├ assets/
-│ └ images/
-│ └ sampleWindow.png
-├ README.md
-└ pom.xml (if using Maven)
+├── src/
+│   ├── game/
+│   │   ├── Dice.java
+│   │   ├── Game.java
+│   │   └── Player.java
+│   └── ui/
+│       └── MainWindow.java
+├── assets/
+│   └── images/
+│       └── sampleWindow.png
+├── README.md
+└── pom.xml   (if using Maven)
 
 ## 👨‍💻 Author
 
