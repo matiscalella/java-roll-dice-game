@@ -106,6 +106,7 @@ The `Dice` class:
 
 ## 📦 Project Structure
 
+```bash
 DiceRoller/
 ├── src/
 │   ├── game/
@@ -119,6 +120,7 @@ DiceRoller/
 │       └── sampleWindow.png
 ├── README.md
 └── pom.xml   (if using Maven)
+```
 
 ## 👨‍💻 Author
 
