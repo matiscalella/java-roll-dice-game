@@ -20,6 +20,14 @@ This project demonstrates **object-oriented design, game state management, event
 
 ---
 
+## 🎲 Screenshot
+
+<p align="center">
+  <img src="assets/images/sampleWindow.png" width="500">
+</p>
+
+---
+
 ## 🧠 Architecture Overview
 
 The project follows a clean **Model + GUI Controller structure**:
