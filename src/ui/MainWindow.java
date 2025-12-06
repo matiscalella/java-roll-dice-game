@@ -73,7 +73,7 @@ public class MainWindow extends javax.swing.JFrame {
         spnDice.setFont(new java.awt.Font("JetBrains Mono", 0, 16)); // NOI18N
         spnDice.setModel(new javax.swing.SpinnerNumberModel(3, 1, 10, 1));
 
-        btnPlay.setFont(new java.awt.Font("JetBrains Mono", 0, 16)); // NOI18N
+        btnPlay.setFont(new java.awt.Font("JetBrains Mono", 1, 16)); // NOI18N
         btnPlay.setText("PLAY");
         btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,13 +81,16 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        txtPlayer1.setFont(new java.awt.Font("JetBrains Mono", 0, 16)); // NOI18N
+        txtPlayer1.setFont(new java.awt.Font("JetBrains Mono", 1, 16)); // NOI18N
+        txtPlayer1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEmptyBorder(5, 10, 5, 10)));
 
-        txtPlayer2.setFont(new java.awt.Font("JetBrains Mono", 0, 16)); // NOI18N
+        txtPlayer2.setFont(new java.awt.Font("JetBrains Mono", 1, 16)); // NOI18N
+        txtPlayer2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEmptyBorder(5, 10, 5, 10)));
 
         txtOutput.setColumns(20);
-        txtOutput.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        txtOutput.setFont(new java.awt.Font("JetBrains Mono", 1, 13)); // NOI18N
         txtOutput.setRows(5);
+        txtOutput.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
         jScrollPane2.setViewportView(txtOutput);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -114,7 +117,7 @@ public class MainWindow extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addGap(18, 18, 18)
                                     .addComponent(txtPlayer1))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
                                     .addComponent(txtPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))))
@@ -129,19 +132,19 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(spnDice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnPlay)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -346,7 +349,7 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             txtOutput.append("\nIt's a tie!\n");
         }
-        txtOutput.append("=======================\n");
+        txtOutput.append("=======================");
 
         currentRollCount = 0;
         currentPlayer = null;
