@@ -70,15 +70,64 @@ The project follows a clean **Model + GUI Controller structure**:
 
 ---
 
+## 🕹 How it works
+
+1. Enter a name for **Player 1**
+2. Enter a name for **Player 2**
+3. Select how many dice each player rolls
+4. Click **PLAY**
+5. Watch the results in the output window
+
+---
+
 ## 📸 Gameplay Flow
 
 1. Player 1 rolls all dice (animated)
-2. Automatic 1-second pause between rolls
+2. Automatic 2-second pause between rolls
 3. Player 2 rolls all dice
 4. Final scores are displayed
 5. Winner (or tie) is announced
 
 ---
 
-## 📂 Project Structure
+## 💡 Game Logic
 
+The `Game` class:
+- manages both players
+- controls scoring
+- determines winner
+- outputs results in GUI text area
+
+The `Dice` class:
+- only returns random values from 1 to 6
+- GUI handles ASCII display
+
+---
+
+## 📦 Project Structure
+
+DiceRoller/
+├ src/
+│ ├ game/
+│ │ ├ Dice.java
+│ │ ├ Game.java
+│ │ └ Player.java
+│ └ ui/
+│ └ MainWindow.java
+├ assets/
+│ └ images/
+│ └ sampleWindow.png
+├ README.md
+└ pom.xml (if using Maven)
+
+## 👨‍💻 Author
+
+Developed by **Matias Scalella**\
+As part of personal practice and Java portfolio development.
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+This project is open-source and available for educational and personal
+use.
